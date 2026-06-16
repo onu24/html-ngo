@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>संस्था का नाम | सकारात्मक बदलाव</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html { scroll-behavior: smooth; }
+        /* Language Switching Rules */
+        .lang-hi .lang-en-block { display: none !important; }
+        .lang-en .lang-hi-block { display: none !important; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans lang-hi">
+
+    <!-- NAVBAR (नेविगेशन बार) -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 py-3.5 flex justify-between items-center">
+            
+            <!-- Logo & Title (लोगो और नाम) -->
+            <div class="flex items-center space-x-3">
+                <div class="bg-gradient-to-tr from-teal-600 to-emerald-500 text-white rounded-xl w-11 h-11 flex items-center justify-center font-bold text-2xl shadow-md shadow-teal-100">
+                    स
+                </div>
+                <div>
+                    <h1 class="text-lg font-black tracking-tight text-slate-900 leading-none">
+                        <span class="lang-hi-block">संस्था का नाम</span>
+                        <span class="lang-en-block">NGO NAME</span>
+                    </h1>
+                    <span class="text-[11px] text-slate-500 font-medium block mt-1">
+                        <span class="lang-hi-block">पंजीकरण संख्या: XXXXX/YYYY</span>
+                        <span class="lang-en-block">Reg No: XXXXX/YYYY</span>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Desktop Nav Links (मुख्य मेनू) -->
+            <nav class="hidden lg:flex items-center space-x-8 font-semibold text-sm text-slate-600">
+                <a href="#about" class="hover:text-teal-600 transition">
+                    <span class="lang-hi-block">परिचय</span><span class="lang-en-block">About Us</span>
+                </a>
+                <a href="#work" class="hover:text-teal-600 transition">
+                    <span class="lang-hi-block">हमारे कार्य</span><span class="lang-en-block">Our Work</span>
+                </a>
+                <a href="#gallery" class="hover:text-teal-600 transition">
+                    <span class="lang-hi-block">गैलरी</span><span class="lang-en-block">Gallery</span>
+                </a>
+                <a href="#contact" class="hover:text-teal-600 transition">
+                    <span class="lang-hi-block">संपर्क करें</span><span class="lang-en-block">Contact Us</span>
+                </a>
+            </nav>
+
+            <!-- Language and Donate Actions -->
+            <div class="flex items-center space-x-3">
+                <!-- Toggle Button -->
+                <button onclick="toggleLanguage()" class="flex items-center space-x-1.5 bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-700 font-bold px-3 py-1.5 rounded-lg text-xs transition">
+                    <i class="fa-solid fa-language text-sm text-teal-600"></i>
+                    <span id="langBtnText">English</span>
+                </button>
+
+                <!-- Donate Button -->
+                <a href="#donate" class="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold px-4 sm:px-5 py-2 rounded-xl text-xs sm:text-sm transition shadow-md shadow-orange-100 flex items-center">
+                    <i class="fa-solid fa-heart mr-2 animate-pulse"></i>
+                    <span class="lang-hi-block">दान करें</span><span class="lang-en-block">Donate</span>
+                </a>
+
+                <!-- Hamburger Mobile Menu -->
+                <button onclick="toggleMobileMenu()" class="lg:hidden text-slate-700 hover:text-slate-900 focus:outline-none p-1">
+                    <i id="menuIcon" class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-t border-slate-100 px-4 py-4 space-y-3 shadow-inner">
+            <a href="#about" onclick="toggleMobileMenu()" class="block font-semibold text-slate-700 py-1">
+                <span class="lang-hi-block">परिचय</span><span class="lang-en-block">About Us</span>
+            </a>
+            <a href="#work" onclick="toggleMobileMenu()" class="block font-semibold text-slate-700 py-1">
+                <span class="lang-hi-block">हमारे कार्य</span><span class="lang-en-block">Our Work</span>
+            </a>
+            <a href="#gallery" onclick="toggleMobileMenu()" class="block font-semibold text-slate-700 py-1">
+                <span class="lang-hi-block">गैलरी</span><span class="lang-en-block">Gallery</span>
+            </a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block font-semibold text-slate-700 py-1">
+                <span class="lang-hi-block">संपर्क करें</span><span class="lang-en-block">Contact Us</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION (मुख्य बैनर) -->
+    <section class="relative bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white py-16 lg:py-24 px-4 sm:px-6 overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="container mx-auto grid lg:grid-cols-12 gap-12 items-center relative z-10">
+            
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <span class="inline-flex items-center gap-1.5 bg-teal-500/10 border border-teal-500/30 text-teal-400 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                    <i class="fa-solid fa-certificate text-[10px]"></i> 
+                    <span class="lang-hi-block">80G और 12A प्रमाणित (टैक्स में छूट उपलब्ध)</span>
+                    <span class="lang-en-block">80G & 12A Certified (Tax Benefit Available)</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight">
+                    <span class="lang-hi-block">जीवनों को सशक्त बनाना, <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">एक उज्जवल समाज का निर्माण।</span></span>
+                    <span class="lang-en-block">Empowering Communities, <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">Creating Brighter Futures.</span></span>
+                </h2>
+                <p class="text-base sm:text-lg text-slate-300 max-w-xl mx-auto lg:mx-0">
+                    <span class="lang-hi-block">हमारा उद्देश्य शिक्षा, स्वास्थ्य और सड़क सुरक्षा जागरूकता के माध्यम से समाज के हर वर्ग में एक सकारात्मक और स्थायी बदलाव लाना है।</span>
+                    <span class="lang-en-text lang-en-block">We are dedicated to bringing positive societal change through baseline projects focusing on modern education, accessible healthcare, and critical road safety.</span>
+                </p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start pt-2">
+                    <a href="#donate" class="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 font-bold px-8 py-3.5 rounded-xl shadow-lg transition text-center text-sm">
+                        <span class="lang-hi-block">मदद के लिए हाथ बढ़ाएं</span><span class="lang-en-block">Support Our Cause</span>
+                    </a>
+                    <a href="#volunteer" class="bg-white/5 border border-white/20 hover:bg-white/10 font-semibold px-8 py-3.5 rounded-xl transition text-center text-sm">
+                        <span class="lang-hi-block">स्वयंसेवक बनें</span><span class="lang-en-block">Join As Volunteer</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 px-4 sm:px-0">
+                <div class="relative mx-auto max-w-md lg:max-w-none">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-teal-500 to-amber-500 rounded-2xl blur opacity-30"></div>
+                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=600&q=80" alt="NGO Action" class="relative rounded-2xl shadow-2xl border border-white/10 object-cover w-full h-64 sm:h-80 lg:h-96">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST BADGES (विश्वसनीयता प्रमाण) -->
+    <section class="bg-white border-b border-slate-100 py-6 px-4">
+        <div class="container mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+            <div class="p-4 bg-slate-50 rounded-xl flex items-center space-x-4 text-left sm:justify-center">
+                <div class="p-3 bg-blue-100 text-blue-600 rounded-lg text-lg"><i class="fa-solid fa-gavel"></i></div>
+                <div>
+                    <h4 class="font-bold text-slate-800 text-xs sm:text-sm uppercase tracking-wide">
+                        <span class="lang-hi-block">वैधानिक पंजीकरण</span><span class="lang-en-block">Legal Registration</span>
+                    </h4>
+                    <p class="text-xs text-slate-500 mt-0.5">
+                        <span class="lang-hi-block">सोसायटी/ट्रस्ट एक्ट के तहत पंजीकृत</span><span class="lang-en-block">Registered Under Trust Act</span>
+                    </p>
+                </div>
+            </div>
+            <div class="p-4 bg-slate-50 rounded-xl flex items-center space-x-4 text-left sm:justify-center">
+                <div class="p-3 bg-emerald-100 text-emerald-600 rounded-lg text-lg"><i class="fa-solid fa-percent"></i></div>
+                <div>
+                    <h4 class="font-bold text-slate-800 text-xs sm:text-sm uppercase tracking-wide">
+                        <span class="lang-hi-block">टैक्स में छूट</span><span class="lang-en-block">Tax Exemption</span>
+                    </h4>
+                    <p class="text-xs text-slate-500 mt-0.5">
+                        <span class="lang-hi-block">धारा 80G और 12A मान्यता प्राप्त</span><span class="lang-en-block">Approved 80G & 12A Status</span>
+                    </p>
+                </div>
+            </div>
+            <div class="p-4 bg-slate-50 rounded-xl flex items-center space-x-4 text-left sm:justify-center">
+                <div class="p-3 bg-amber-100 text-amber-600 rounded-lg text-lg"><i class="fa-solid fa-shield-heart"></i></div>
+                <div>
+                    <h4 class="font-bold text-slate-800 text-xs sm:text-sm uppercase tracking-wide">
+                        <span class="lang-hi-block">100% पारदर्शिता</span><span class="lang-en-block">100% Transparency</span>
+                    </h4>
+                    <p class="text-xs text-slate-500 mt-0.5">
+                        <span class="lang-hi-block">फंड का सीधा जनहित में उपयोग</span><span class="lang-en-block">Fully Audited Welfare Operations</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION (संस्था का परिचय) -->
+    <section id="about" class="py-16 px-4 sm:px-6 container mx-auto max-w-6xl">
+        <div class="text-center max-w-xl mx-auto mb-12">
+            <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+                <span class="lang-hi-block">हम कौन हैं?</span><span class="lang-en-block">Who We Are</span>
+            </h2>
+            <div class="h-1 w-12 bg-teal-500 mx-auto mt-2.5 rounded-full"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 lg:gap-8 mb-16">
+            <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-100 shadow-sm">
+                <div class="w-10 h-10 bg-teal-50 text-teal-600 rounded-xl flex items-center justify-center text-lg mb-4"><i class="fa-solid fa-eye"></i></div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">
+                    <span class="lang-hi-block">हमारा विज़न और मिशन</span><span class="lang-en-block">Vision & Mission</span>
+                </h3>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    <span class="lang-hi-block">एक ऐसे न्यायसंगत समाज की स्थापना करना जहाँ हर बच्चे को अच्छी शिक्षा मिले, कोई भी व्यक्ति इलाज के बिना न भटके, और सभी नागरिक सुरक्षित वातावरण में सम्मान के साथ जी सकें।</span>
+                    <span class="lang-en-block">To build an equitable, inclusive framework where baseline legal, health, and fundamental learning structures safely reach isolated and socio-economically marginalized citizens.</span>
+                </p>
+            </div>
+            <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-100 shadow-sm">
+                <div class="w-10 h-10 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center text-lg mb-4"><i class="fa-solid fa-book-open"></i></div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">
+                    <span class="lang-hi-block">हमारी स्थापना की कहानी</span><span class="lang-en-block">Our Journey</span>
+                </h3>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    <span class="lang-hi-block">कुछ जुनूनी समाजसेवियों की छोटी सी पहल से शुरू हुआ यह सफर आज एक विशाल संगठन का रूप ले चुका है। हम निरंतर जमीनी स्तर पर जाकर जरूरतमंदों के उत्थान में लगे हुए हैं।</span>
+                    <span class="lang-en-block">Initiated by unified baseline volunteers, our framework has evolved from local ground operations into a verified transparent trust helping thousands across urban and rural belts.</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- Team (हमारी टीम) -->
+        <div>
+            <h3 class="text-xl font-bold text-center text-slate-900 mb-8">
+                <span class="lang-hi-block">संस्था के मुख्य सदस्य</span><span class="lang-en-block">Trustees & Leadership</span>
+            </h3>
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="bg-white p-5 rounded-xl border border-slate-100 shadow-sm text-center">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&h=150&q=80" alt="Member" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover border-2 border-teal-500/20">
+                    <h4 class="font-bold text-slate-900 text-base">जॉन डो (John Doe)</h4>
+                    <p class="text-xs text-teal-600 font-semibold tracking-wider uppercase mt-0.5">
+                        <span class="lang-hi-block">संस्थापक एवं ट्रस्टी</span><span class="lang-en-block">Founder & Trustee</span>
+                    </p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-slate-100 shadow-sm text-center">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&h=150&q=80" alt="Member" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover border-2 border-teal-500/20">
+                    <h4 class="font-bold text-slate-900 text-base">जेन स्मिथ (Jane Smith)</h4>
+                    <p class="text-xs text-teal-600 font-semibold tracking-wider uppercase mt-0.5">
+                        <span class="lang-hi-block">प्रबंधक निदेशक</span><span class="lang-en-block">Managing Director</span>
+                    </p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-slate-100 shadow-sm text-center sm:col-span-2 md:col-span-1">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&h=150&q=80" alt="Member" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover border-2 border-teal-500/20">
+                    <h4 class="font-bold text-slate-900 text-base">अमित कुमार (Amit Kumar)</h4>
+                    <p class="text-xs text-teal-600 font-semibold tracking-wider uppercase mt-0.5">
+                        <span class="lang-hi-block">परियोजना प्रमुख</span><span class="lang-en-block">Project Lead</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WORK SECTOR (मुख्य कार्यक्षेत्र) -->
+    <section id="work" class="bg-slate-900 text-white py-16 px-4 sm:px-6">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center max-w-xl mx-auto mb-12">
+                <h2 class="text-2xl sm:text-3xl font-black tracking-tight">
+                    <span class="lang-hi-block">हमारे मुख्य कार्यक्षेत्र</span><span class="lang-en-block">Core Impact Areas</span>
+                </h2>
+                <div class="h-1 w-12 bg-amber-400 mx-auto mt-2.5 rounded-full"></div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                <!-- Education -->
+                <div class="bg-white/5 border border-white/10 p-6 rounded-2xl">
+                    <div class="w-10 h-10 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center text-lg font-bold mb-4"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h4 class="font-bold text-lg mb-1.5"><span class="lang-hi-block">निशुल्क शिक्षा</span><span class="lang-en-block">Education</span></h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        <span class="lang-hi-block">गरीब बच्चों के लिए ट्यूशन कक्षाएं, कॉपियां, किताबें और आधुनिक डिजिटल टूल्स उपलब्ध कराना।</span>
+                        <span class="lang-en-block">Free remedial classrooms, fundamental tools, and digital learning kits for underprivileged children.</span>
+                    </p>
+                </div>
+                <!-- Health -->
+                <div class="bg-white/5 border border-white/10 p-6 rounded-2xl">
+                    <div class="w-10 h-10 bg-red-500/10 text-red-400 rounded-xl flex items-center justify-center text-lg font-bold mb-4"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <h4 class="font-bold text-lg mb-1.5"><span class="lang-hi-block">स्वास्थ्य सेवाएँ</span><span class="lang-en-block">Healthcare</span></h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        <span class="lang-hi-block">ग्रामीण एवं पिछड़े इलाकों में स्वास्थ्य जांच शिविर लगाना और मुफ्त दवाएं वितरित करना।</span>
+                        <span class="lang-en-block">Free localized testing operations, primary medicine delivery, and routine rural check-up camps.</span>
+                    </p>
+                </div>
+                <!-- Eco -->
+                <div class="bg-white/5 border border-white/10 p-6 rounded-2xl">
+                    <div class="w-10 h-10 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center text-lg font-bold mb-4"><i class="fa-solid fa-leaf"></i></div>
+                    <h4 class="font-bold text-lg mb-1.5"><span class="lang-hi-block">पर्यावरण संरक्षण</span><span class="lang-en-block">Environment</span></h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        <span class="lang-hi-block">वृक्षारोपण अभियान चलाना तथा बस्तियों में स्वच्छता और प्लास्टिक कचरा नियंत्रण जागरूकता फैलाना।</span>
+                        <span class="lang-en-block">Localized tree plantation frameworks and waste optimization programs for a cleaner tomorrow.</span>
+                    </p>
+                </div>
+                <!-- Safety -->
+                <div class="bg-white/5 border border-white/10 p-6 rounded-2xl">
+                    <div class="w-10 h-10 bg-amber-500/10 text-amber-400 rounded-xl flex items-center justify-center text-lg font-bold mb-4"><i class="fa-solid fa-road"></i></div>
+                    <h4 class="font-bold text-lg mb-1.5"><span class="lang-hi-block">सड़क सुरक्षा</span><span class="lang-en-block">Road Safety</span></h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        <span class="lang-hi-block">यातायात नियमों के प्रति जागरूकता अभियान चलाना और निशुल्क हेलमेट वितरित करना।</span>
+                        <span class="lang-en-block">Traffic rule literacy drives, helmet distributions, and accident avoidance workshops.</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Stats Module -->
+            <div class="bg-gradient-to-br from-teal-900 to-indigo-950 rounded-2xl p-6 sm:p-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center border border-teal-500/20">
+                <div>
+                    <span class="text-2xl sm:text-3xl font-black text-amber-400 block">10,000+</span>
+                    <span class="text-[11px] uppercase tracking-wider text-slate-300 font-medium mt-1 block">
+                        <span class="lang-hi-block">लाभांवित नागरिक</span><span class="lang-en-block">Lives Impacted</span>
+                    </span>
+                </div>
+                <div>
+                    <span class="text-2xl sm:text-3xl font-black text-amber-400 block">50+</span>
+                    <span class="text-[11px] uppercase tracking-wider text-slate-300 font-medium mt-1 block">
+                        <span class="lang-hi-block">कवर्ड क्षेत्र/गाँव</span><span class="lang-en-block">Villages Covered</span>
+                    </span>
+                </div>
+                <div>
+                    <span class="text-2xl sm:text-3xl font-black text-amber-400 block">500+</span>
+                    <span class="text-[11px] uppercase tracking-wider text-slate-300 font-medium mt-1 block">
+                        <span class="lang-hi-block">सक्रिय स्वयंसेवक</span><span class="lang-en-block">Active Volunteers</span>
+                    </span>
+                </div>
+                <div>
+                    <span class="text-2xl sm:text-3xl font-black text-amber-400 block">100%</span>
+                    <span class="text-[11px] uppercase tracking-wider text-slate-300 font-medium mt-1 block">
+                        <span class="lang-hi-block">पारदर्शिता दर</span><span class="lang-en-block">Transparency</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DONATE & VOLUNTEER (सहयोग एवं पंजीकरण) -->
+    <section id="donate" class="py-16 px-4 sm:px-6 container mx-auto max-w-5xl">
+        <div class="text-center max-w-xl mx-auto mb-12">
+            <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+                <span class="lang-hi-block">योगदान और सहायता</span><span class="lang-en-block">Support Our Work</span>
+            </h2>
+            <div class="h-1 w-12 bg-teal-500 mx-auto mt-2.5 rounded-full"></div>
+        </div>
+
+        <div class="grid md:grid-cols-12 gap-8 items-stretch">
+            <!-- Bank Details -->
+            <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/60 shadow-sm md:col-span-7 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-5 flex items-center">
+                        <i class="fa-solid fa-building-columns text-teal-600 mr-2.5"></i>
+                        <span class="lang-hi-block">बैंक खाता विवरण (Direct Transfer)</span>
+                        <span class="lang-en-block">Direct Bank Transfer</span>
+                    </h3>
+                    <div class="space-y-3.5 text-xs sm:text-sm">
+                        <div class="flex justify-between border-b border-slate-100 pb-2">
+                            <span class="text-slate-500"><span class="lang-hi-block">खाते का नाम:</span><span class="lang-en-block">Account Name:</span></span> 
+                            <strong class="text-slate-800 text-right">NGO OFFICIAL TRUST ACCOUNT</strong>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-100 pb-2">
+                            <span class="text-slate-500"><span class="lang-hi-block">खाता संख्या:</span><span class="lang-en-block">Account Number:</span></span> 
+                            <strong class="text-slate-800 tracking-wider">1234567890123</strong>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-100 pb-2">
+                            <span class="text-slate-500"><span class="lang-hi-block">आईएफएससी (IFSC):</span><span class="lang-en-block">IFSC Code:</span></span> 
+                            <strong class="text-teal-600 font-mono">SBIN0001234</strong>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-100 pb-2">
+                            <span class="text-slate-500"><span class="lang-hi-block">बैंक का नाम:</span><span class="lang-en-block">Bank Name:</span></span> 
+                            <strong class="text-slate-800">State Bank of India</strong>
+                        </div>
+                        <div class="flex justify-between pb-2">
+                            <span class="text-slate-500"><span class="lang-hi-block">शाखा (Branch):</span><span class="lang-en-block">Branch:</span></span> 
+                            <strong class="text-slate-800">Main Hub, New Delhi</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 p-4 bg-amber-50 border border-amber-200/50 rounded-xl text-xs text-amber-800 font-medium">
+                    <span class="lang-hi-block">* कृपया 80G टैक्स रसीद छूट प्राप्त करने के लिए भुगतान का स्क्रीनशॉट हमारे ईमेल पर भेजें।</span>
+                    <span class="lang-en-block">* Please share receipt copies via email to receive your 80G tax exemption certificate.</span>
+                </div>
+            </div>
+
+            <!-- UPI Payment Card -->
+            <div class="bg-slate-950 text-white p-6 sm:p-8 rounded-2xl shadow-xl md:col-span-5 flex flex-col justify-center items-center text-center">
+                <h3 class="text-base font-bold tracking-wide text-amber-400">
+                    <span class="lang-hi-block">UPI द्वारा तुरंत दान करें</span><span class="lang-en-block">Scan & Pay via UPI</span>
+                </h3>
+                <p class="text-[11px] text-slate-400 mt-1 mb-4">gPay, PhonePe, Paytm, Bhim आदि द्वारा सुरक्षित</p>
+                
+                <div class="bg-white p-2.5 rounded-xl inline-block mb-4 shadow-inner">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=upi://pay?pa=yourngo@bank" alt="UPI QR" class="w-36 h-36">
+                </div>
+                
+                <span class="bg-white/10 text-xs font-mono px-4 py-2 rounded-lg border border-white/10 block w-full truncate">
+                    ngo@upi
+                </span>
+            </div>
+        </div>
+
+        <!-- Volunteer Registration Form (फॉर्म) -->
+        <div id="volunteer" class="max-w-xl mx-auto mt-16 bg-white p-6 sm:p-8 rounded-2xl border border-slate-100 shadow-md">
+            <h3 class="text-lg font-bold text-center text-slate-900">
+                <span class="lang-hi-block">स्वयंसेवक पंजीकरण फॉर्म</span><span class="lang-en-block">Become a Volunteer</span>
+            </h3>
+            <p class="text-xs text-center text-slate-500 mt-1 mb-6">
+                <span class="lang-hi-block">हमारे साथ जुड़कर समाज सेवा में अपना योगदान दें</span>
+                <span class="lang-en-block">Join hands to support real social change</span>
+            </p>
+            
+            <form class="space-y-4" onsubmit="event.preventDefault(); alert('धन्यवाद! आपका फॉर्म जमा हो गया है।');">
+                <div>
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-600 mb-1">
+                        <span class="lang-hi-block">पूरा नाम</span><span class="lang-en-block">Full Name</span>
+                    </label>
+                    <input type="text" required class="w-full px-4 py-2 text-sm border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 bg-slate-50">
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-600 mb-1">
+                            <span class="lang-hi-block">मोबाइल नंबर</span><span class="lang-en-block">Phone Number</span>
+                        </label>
+                        <input type="tel" required class="w-full px-4 py-2 text-sm border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 bg-slate-50">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-600 mb-1">
+                            <span class="lang-hi-block">ईमेल आईडी</span><span class="lang-en-block">Email Address</span>
+                        </label>
+                        <input type="email" required class="w-full px-4 py-2 text-sm border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 bg-slate-50">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-600 mb-1">
+                        <span class="lang-hi-block">आप कैसे सहयोग कर सकते हैं?</span><span class="lang-en-block">Area of Interest</span>
+                    </label>
+                    <textarea rows="2" class="w-full px-4 py-2 text-sm border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 bg-slate-50"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 rounded-xl text-xs uppercase tracking-wider transition shadow-md shadow-teal-100">
+                    <span class="lang-hi-block">रजिस्ट्रेशन सबमिट करें</span><span class="lang-en-block">Submit Form</span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- GALLERY & PRESS (मीडिया और गैलरी) -->
+    <section id="gallery" class="bg-slate-100 py-16 px-4 sm:px-6">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center max-w-xl mx-auto mb-12">
+                <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+                    <span class="lang-hi-block">गैलरी और मीडिया समाचार</span><span class="lang-en-block">Gallery & Highlights</span>
+                </h2>
+                <div class="h-1 w-12 bg-teal-500 mx-auto mt-2.5 rounded-full"></div>
+            </div>
+
+            <!-- Grid Items -->
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 mb-10">
+                <div class="overflow-hidden rounded-xl bg-white aspect-video shadow-sm border border-slate-200/50">
+                    <img src="https://images.unsplash.com/photo-1594708767771-a7502209ff51?auto=format&fit=crop&w=500&q=80" alt="Activity 1" class="hover:scale-105 transition duration-300 w-full h-full object-cover">
+                </div>
+                <div class="overflow-hidden rounded-xl bg-white aspect-video shadow-sm border border-slate-200/50">
+                    <img src="https://images.unsplash.com/photo-1489659639091-8b687bc4386e?auto=format&fit=crop&w=500&q=80" alt="Activity 2" class="hover:scale-105 transition duration-300 w-full h-full object-cover">
+                </div>
+                <div class="overflow-hidden rounded-xl bg-white aspect-video shadow-sm border border-slate-200/50">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=500&q=80" alt="Activity 3" class="hover:scale-105 transition duration-300 w-full h-full object-cover">
+                </div>
+            </div>
+
+            <!-- Press Cutouts -->
+            <div class="bg-white p-5 sm:p-6 rounded-2xl border border-slate-200/60 max-w-3xl mx-auto">
+                <h4 class="font-bold text-slate-800 text-sm mb-4 text-center">
+                    <i class="fa-solid fa-newspaper text-teal-600 mr-2"></i>
+                    <span class="lang-hi-block">प्रमुख समाचार पत्रों में कवरेज</span><span class="lang-en-block">Recent Press Coverage</span>
+                </h4>
+                <div class="grid sm:grid-cols-2 gap-3 text-xs sm:text-sm">
+                    <div class="p-3.5 bg-slate-50 border border-slate-100 rounded-xl">
+                        <span class="font-black text-slate-900 block">दैनिक भास्कर (Dainik Bhaskar)</span>
+                        <p class="text-slate-500 text-xs mt-1">
+                            <span class="lang-hi-block">"सड़क सुरक्षा जागरूकता शिविर के दौरान संस्था ने बांटे निशुल्क हेलमेट।"</span>
+                            <span class="lang-en-block">"NGO organized active road safety camps and helmet distribution drives."</span>
+                        </p>
+                    </div>
+                    <div class="p-3.5 bg-slate-50 border border-slate-100 rounded-xl">
+                        <span class="font-black text-slate-900 block">The Times of India</span>
+                        <p class="text-slate-500 text-xs mt-1">
+                            <span class="lang-hi-block">"ग्रामीण क्षेत्रों में डिजिटल शिक्षा किट पहुंचाने में अग्रणी भूमिका।"</span>
+                            <span class="lang-en-block">"NGO implements free smart education kits across rural setups."</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & MAP (संपर्क सूत्र) -->
+    <section id="contact" class="py-16 px-4 sm:px-6 container mx-auto max-w-5xl">
+        <div class="grid md:grid-cols-12 gap-10 items-start">
+            
+            <div class="md:col-span-6 space-y-6">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+                        <span class="lang-hi-block">संपर्क सूत्र</span><span class="lang-en-block">Contact Us</span>
+                    </h2>
+                    <div class="h-1 w-12 bg-teal-500 mt-2 rounded-full"></div>
+                </div>
+                
+                <div class="space-y-4 text-xs sm:text-sm">
+                    <div class="flex items-start space-x-3">
+                        <div class="text-teal-600 mt-0.5"><i class="fa-solid fa-location-dot text-base"></i></div>
+                        <div>
+                            <strong class="block text-slate-900">
+                                <span class="lang-hi-block">मुख्य कार्यालय का पता:</span><span class="lang-en-block">Office Address:</span>
+                            </strong>
+                            <span class="text-slate-600 block mt-0.5">123, सेवा भवन, मेट्रो स्टेशन के पास, नई दिल्ली - 110001</span>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="text-teal-600 mt-0.5"><i class="fa-solid fa-phone text-base"></i></div>
+                        <div>
+                            <strong class="block text-slate-900">
+                                <span class="lang-hi-block">फ़ोन और मोबाइल:</span><span class="lang-en-block">Phone & Mobile:</span>
+                            </strong>
+                            <span class="text-slate-600 block mt-0.5">+91 98765 43210, +91 11 234567</span>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="text-teal-600 mt-0.5"><i class="fa-solid fa-envelope text-base"></i></div>
+                        <div>
+                            <strong class="block text-slate-900">
+                                <span class="lang-hi-block">आधिकारिक ईमेल ID:</span><span class="lang-en-block">Professional Email:</span>
+                            </strong>
+                            <span class="text-teal-600 font-semibold block mt-0.5">info@yourngoname.org</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media -->
+                <div class="pt-2">
+                    <h4 class="font-bold text-slate-700 text-xs uppercase tracking-wider mb-3">
+                        <span class="lang-hi-block">सोशल मीडिया पर जुड़ें</span><span class="lang-en-block">Connect Globally</span>
+                    </h4>
+                    <div class="flex space-x-2.5">
+                        <a href="#" class="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center hover:opacity-90 transition text-sm"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-xl bg-pink-600 text-white flex items-center justify-center hover:opacity-90 transition text-sm"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-xl bg-slate-900 text-white flex items-center justify-center hover:opacity-90 transition text-sm"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-xl bg-red-600 text-white flex items-center justify-center hover:opacity-90 transition text-sm"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map -->
+            <div class="rounded-2xl overflow-hidden border border-slate-200 h-64 bg-slate-100 md:col-span-6 w-full shadow-inner relative">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.9723223038626!2d77.21495031508262!3d28.63060248241775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd37b6000001%3A0x1d4d03d3600f60!2sConnaught%20Place%2C%20New%20Delhi!5e0!3m2!1sen!2sin!4v1650000000000!5m2!1sen!2sin" 
+                        class="w-full h-full border-0 absolute inset-0" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (फुटर) -->
+    <footer class="bg-slate-950 text-slate-500 py-8 text-center text-xs border-t border-slate-900 px-4">
+        <div class="container mx-auto max-w-4xl space-y-2">
+            <p class="text-slate-400 font-semibold">© 2026 NGO Official Name Trust. All Rights Reserved.</p>
+            <p class="text-slate-600 leading-relaxed">
+                <span class="lang-hi-block">पंजीकरण विवरण: बुक IV, वॉल्यूम-XXXX. सभी प्रकार के ऑनलाइन योगदान पूर्णतः सुरक्षित गेटवे मानकों के अधीन हैं।</span>
+                <span class="lang-en-block">Registration Index Structure: Book IV, Vol-XXXX. Compliance mapped to global safe transfer parameters.</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <script>
+        function toggleLanguage() {
+            const body = document.body;
+            const btnText = document.getElementById('langBtnText');
+            
+            // Switch class triggers the css block display properties
+            if (body.classList.contains('lang-hi')) {
+                body.classList.remove('lang-hi');
+                body.classList.add('lang-en');
+                btnText.innerText = "हिंदी";
+            } else {
+                body.classList.remove('lang-en');
+                body.classList.add('lang-hi');
+                btnText.innerText = "English";
+            }
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('menuIcon');
+            
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                menu.classList.add('hidden');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        }
+    </script>
+
+</body>
+</html>
